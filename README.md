@@ -1,3 +1,3 @@
-# Ejemplo app Ionic Sección 4
-#### PGY4121 2024
+PROGRAMACION DE APLICACIONES MOVILES_004D
 
+App Renato Pomeri
