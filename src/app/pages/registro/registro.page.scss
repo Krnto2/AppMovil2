@@ -1,0 +1,27 @@
+.chart-container {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+  }
+  
+  .pie {
+    --p: 50; 
+    --b: 16px; 
+    --c: teal; 
+    width: 150px;
+    aspect-ratio: 1;
+    position: relative;
+    display: inline-block;
+    margin: 10px;
+    border-radius: 50%;
+    background: conic-gradient(var(--c) calc(var(--p) * 1%), transparent 0);
+  }
+  
+  .pie:before {
+    content: '';
+    position: absolute;
+    inset: calc(var(--b) * 1);
+    border-radius: 50%;
+    background: #fff;
+  }
+  

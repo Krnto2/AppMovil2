@@ -1,0 +1,166 @@
+<app-encabezado titulo="Horario"></app-encabezado>
+
+
+<ion-content [fullscreen]="true">
+  <ion-segment value="L" (ionChange)="onDayChange($event)" scrollable>
+    <ion-segment-button value="L">
+      <ion-label>L</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="M">
+      <ion-label>M</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="X">
+      <ion-label>X</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="J">
+      <ion-label>J</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="V">
+      <ion-label>V</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="S">
+      <ion-label>S</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+  
+  <ion-item-divider color="light">
+    <ion-label class="ion-text-capitalize">
+      <strong>Profesor Juan Herrera</strong>
+    </ion-label>
+  </ion-item-divider>
+
+  <ion-list *ngIf="selectedDay === 'L'">
+ 
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Lunes</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-item lines="none">
+          <ion-label>
+            <h2>09:00 a 10:40</h2>
+            <p>Programación-Web</p>
+            <p>PGY4121-001</p>
+            <p><strong>Sala:</strong> E307</p>
+            <p><strong>Sede:</strong> CONCEPCIÓN</p>
+          </ion-label>
+        </ion-item>
+        <ion-item lines="none">
+          <ion-label>
+            <h2>12:00 a 14:40</h2>
+            <p>Programación-Web</p>
+            <p>PGY4121-003</p>
+            <p><strong>Sala:</strong> E308</p>
+            <p><strong>Sede:</strong> CONCEPCIÓN</p>
+          </ion-label>
+        </ion-item>
+        <ion-item lines="none">
+          <ion-label>
+            <h2>15:00 a 18:00</h2>
+            <p>Programación-Web</p>
+            <p>PGY4121-004</p>
+            <p><strong>Sala:</strong> E307</p>
+            <p><strong>Sede:</strong> CONCEPCIÓN</p>
+          </ion-label>
+        </ion-item>
+
+      </ion-card-content>
+    </ion-card>
+  </ion-list>
+
+  <ion-list *ngIf="selectedDay === 'M'">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Martes</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-item lines="none">
+          <ion-label>
+            <h2>14:20 a 16:00</h2>
+            <p>Programación-Web</p>
+            <p>PGY4121-002</p>
+            <p><strong>Sala:</strong> E308</p>
+            <p><strong>Sede:</strong> CONCEPCIÓN</p>
+          </ion-label>
+        </ion-item>
+        
+      </ion-card-content>
+    </ion-card>
+  </ion-list>
+
+  <ion-list *ngIf="selectedDay === 'X'">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Miercoles</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-item lines="none">
+          <ion-label>
+            <h2>09:00 a 10:40</h2>
+            <p>Programación-Web</p>
+            <p>PGY4121-001</p>
+            <p><strong>Sala:</strong> E307</p>
+            <p><strong>Sede:</strong> CONCEPCIÓN</p>
+          </ion-label>
+        </ion-item>
+        
+        
+      </ion-card-content>
+    </ion-card>
+  </ion-list>
+
+  <ion-list *ngIf="selectedDay === 'J'">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Jueves</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-item lines="none">
+          <ion-label>
+            <h2>09:00 a 10:40</h2>
+            <p>Programación-Web</p>
+            <p>PGY4121-004</p>
+            <p><strong>Sala:</strong> E307</p>
+            <p><strong>Sede:</strong> CONCEPCIÓN</p>
+          </ion-label>
+        </ion-item>
+        <ion-item lines="none">
+          <ion-label>
+            <h2>13:50 a 15:00</h2>
+            <p>Programación-Web</p>
+            <p>PGY4121-005</p>
+            <p><strong>Sala:</strong> E307</p>
+            <p><strong>Sede:</strong> CONCEPCIÓN</p>
+          </ion-label>
+        </ion-item>
+        
+        
+      </ion-card-content>
+    </ion-card>
+  </ion-list>
+  <ion-list *ngIf="selectedDay === 'V'">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Viernes</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-item lines="none">
+          <ion-label>
+            <h2>09:00 a 10:40</h2>
+            <p>Programación-Web</p>
+            <p>PGY4121-003</p>
+            <p><strong>Sala:</strong> E307</p>
+            <p><strong>Sede:</strong> CONCEPCIÓN</p>
+          </ion-label>
+        </ion-item>
+      </ion-card-content>
+    </ion-card>
+  </ion-list>
+  <ion-list *ngIf="selectedDay === 'S'">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Sabado</ion-card-title>
+      </ion-card-header>
+    </ion-card>
+  </ion-list>
+</ion-content>

@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-title color="light" mode="md" class="ion-text-center">Asistencia</ion-title>
+    <ion-icon name="person" color="tertiary" slot="end" class="ion-padding" size="large" (click)="presentLogoutAlert()"></ion-icon>
+    <ion-icon name="menu" color="light" slot="start" size="large" class="ion-padding"></ion-icon>
+  </ion-toolbar>
+</ion-header>
+
+
+
+<ion-content>
+ 
+  <ion-list lines="full" inset="true">
+    <ion-list-header mode="ios" color="primary">
+      <ion-label color="light">Menú</ion-label>
+    </ion-list-header>
+
+    <ion-item detail="true" (click)="goToScan()">
+      <ion-label class="i-text-capitalize">Página de Escaneo</ion-label>
+      <ion-icon name="scan-outline" slot="start"></ion-icon>
+    </ion-item>
+    <ion-item detail="true" (click)="goToHistorial()">
+      <ion-label class="i-text-capitalize">Historial de Asistencia</ion-label>
+      <ion-icon name="document-text-outline" slot="start"></ion-icon>
+    </ion-item>
+    <ion-item detail="true" (click)="goToHorario()">
+      <ion-label class="i-text-capitalize">Horario</ion-label>
+      <ion-icon name="time-outline" slot="start"></ion-icon>
+    </ion-item>
+  </ion-list>
+  <ion-text color="primary" class="ion-text-center">
+    <h1>Registro de Asistencia</h1>
+    <p>Escanea el código QR para registrar tu asistencia.</p>
+  </ion-text>
+
+  <ion-button expand="block" color="success" (click)="goToScan()">Scanear código QR</ion-button>
+
+</ion-content>

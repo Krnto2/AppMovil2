@@ -1,0 +1,7 @@
+{
+  "name": "ejemplo_app_s4",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

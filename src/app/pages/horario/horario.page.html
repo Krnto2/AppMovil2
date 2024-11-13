@@ -1,0 +1,204 @@
+<app-encabezado titulo="Horario"></app-encabezado>
+
+
+
+<ion-content [fullscreen]="true">
+  <ion-segment value="L" (ionChange)="onDayChange($event)" scrollable>
+    <ion-segment-button value="L">
+      <ion-label>L</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="M">
+      <ion-label>M</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="X">
+      <ion-label>X</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="J">
+      <ion-label>J</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="V">
+      <ion-label>V</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="S">
+      <ion-label>S</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+  
+  <ion-item-divider color="light">
+    <ion-label class="ion-text-capitalize">
+      <strong>INGENIERÍA EN INFORMÁTICA</strong>
+    </ion-label>
+  </ion-item-divider>
+
+  <ion-list *ngIf="selectedDay === 'L'">
+ 
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Lunes</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-item lines="none">
+          <ion-label>
+            <h2>10:41 a 12:50</h2>
+            <p>ESTADÍSTICA DESCRIPTIVA</p>
+            <p>MAT4140-004D</p>
+            <p><strong>Profesor:</strong> KAREN DIANA VENEGAS FERNANDEZ</p>
+            <p><strong>Sala:</strong> E412 LAB. INFORMÁTICA (30)</p>
+            <p><strong>Sede:</strong> CONCEPCIÓN</p>
+          </ion-label>
+        </ion-item>
+        <ion-item lines="none">
+          <ion-label>
+            <h2>13:01 a 13:40</h2>
+            <p>CALIDAD DE SOFTWARE</p>
+            <p>CSY4111-004D</p>
+            <p><strong>Profesor:</strong> GERARDO ENRIQUE GALAN CRUZ</p>
+            <p><strong>Sala:</strong> E412 LAB. INFORMÁTICA (30)</p>
+            <p><strong>Sede:</strong> CONCEPCIÓN</p>
+          </ion-label>
+        </ion-item>
+
+        <ion-item lines="none">
+          <ion-label>
+            <h2>14:00 a 15:40</h2>
+            <p>PROGRAMACIÓN MOVIL</p>
+            <p>CSY4311-006D</p>
+            <p><strong>Profesor:</strong> ALEJANDRO SEBASTIAN SEPULVEDA MONTERO</p>
+            <p><strong>Sala:</strong> E308 LAB. INFORMÁTICA (30)</p>
+            <p><strong>Sede:</strong> CONCEPCIÓN</p>
+          </ion-label>
+        </ion-item>
+
+        <ion-item lines="none">
+          <ion-label>
+            <h2>16:00 a 17:20</h2>
+            <p>ARQUITECTURA</p>
+            <p>CSY3211-005D</p>
+            <p><strong>Profesor:</strong> GONZALO EDUARDO PEREZ CORREA</p>
+            <p><strong>Sala:</strong> E412 LAB. INFORMÁTICA (30)</p>
+            <p><strong>Sede:</strong> CONCEPCIÓN</p>
+          </ion-label>
+        </ion-item>
+
+        <ion-item lines="none">
+          <ion-label>
+            <h2>17:30 a 18:50</h2>
+            <p>PORTAFOLIO</p>
+            <p>CSY5522-004D</p>
+            <p><strong>Profesor:</strong> RENATO ALFONSO POMERI NAVARRETE</p>
+            <p><strong>Sala:</strong> E501 SALA TEORICA (30)</p>
+            <p><strong>Sede:</strong> CONCEPCIÓN</p>
+          </ion-label>
+        </ion-item>
+      </ion-card-content>
+    </ion-card>
+  </ion-list>
+
+  <ion-list *ngIf="selectedDay === 'M'">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Martes</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-item lines="none">
+          <ion-label>
+            <h2>09:00 a 10:40</h2>
+            <p>ALGEBRA</p>
+            <p>MAT3140-002D</p>
+            <p><strong>Profesor:</strong> JUAN PEREZ</p>
+            <p><strong>Sala:</strong> H601</p>
+            <p><strong>Sede:</strong> CONCEPCIÓN</p>
+          </ion-label>
+        </ion-item>
+        <ion-item lines="none">
+          <ion-label>
+            <h2>13:01 a 13:40</h2>
+            <p>CALIDAD DE SOFTWARE</p>
+            <p>CSY4111-004D</p>
+            <p><strong>Profesor:</strong> GERARDO ENRIQUE GALAN CRUZ</p>
+            <p><strong>Sala:</strong> E412 LAB. INFORMÁTICA (30)</p>
+            <p><strong>Sede:</strong> CONCEPCIÓN</p>
+          </ion-label>
+        </ion-item>
+      </ion-card-content>
+    </ion-card>
+  </ion-list>
+
+  <ion-list *ngIf="selectedDay === 'X'">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Miercoles</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-item lines="none">
+          <ion-label>
+            <h2>09:00 a 10:40</h2>
+            <p>ALGEBRA</p>
+            <p>MAT3140-002D</p>
+            <p><strong>Profesor:</strong> JUAN PEREZ</p>
+            <p><strong>Sala:</strong> H501</p>
+            <p><strong>Sede:</strong> CONCEPCIÓN</p>
+          </ion-label>
+        </ion-item>
+      </ion-card-content>
+    </ion-card>
+  </ion-list>
+
+  <ion-list *ngIf="selectedDay === 'J'">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Jueves</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-item lines="none">
+          <ion-label>
+            <h2>09:00 a 10:40</h2>
+            <p>INGLES </p>
+            <p>INI3135-055D</p>
+            <p><strong>Profesor:</strong> FELIPE GONZALES SANHUESA</p>
+            <p><strong>Sala:</strong> H605</p>
+            <p><strong>Sede:</strong> CONCEPCIÓN</p>
+          </ion-label>
+        </ion-item>
+        <ion-item lines="none">
+          <ion-label>
+            <h2>13:00 a 14:50</h2>
+            <p>ÉTICA </p>
+            <p>INI3135-055D</p>
+            <p><strong>Profesor:</strong> DANIEL BRITO GARCIA</p>
+            <p><strong>Sala:</strong> E505</p>
+            <p><strong>Sede:</strong> CONCEPCIÓN</p>
+          </ion-label>
+        </ion-item>
+        
+        
+      </ion-card-content>
+    </ion-card>
+  </ion-list>
+  <ion-list *ngIf="selectedDay === 'V'">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Viernes</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-item lines="none">
+          <ion-label>
+            <h2>09:00 a 10:40</h2>
+            <p>ALGEBRA</p>
+            <p>MAT3140-002D</p>
+            <p><strong>Profesor:</strong> JUAN PEREZ</p>
+            <p><strong>Sala:</strong> H501</p>
+            <p><strong>Sede:</strong> CONCEPCIÓN</p>
+          </ion-label>
+        </ion-item>
+      </ion-card-content>
+    </ion-card>
+  </ion-list>
+  <ion-list *ngIf="selectedDay === 'S'">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Sabado</ion-card-title>
+      </ion-card-header>
+    </ion-card>
+  </ion-list>
+</ion-content>

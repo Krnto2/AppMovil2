@@ -1,0 +1,10 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home" text="Volver" color="light"></ion-back-button>
+    </ion-buttons>
+    <ion-title class="ion-text-capitalize ion-text-center" color="light" mode="md">{{titulo}}</ion-title>
+ 
+    <ion-icon name="person" color="tertiary" slot="end" class="ion-padding" size="large" (click)="presentLogoutAlert()"></ion-icon>
+  </ion-toolbar>
+</ion-header>

@@ -1,0 +1,21 @@
+<app-encabezado titulo="Scanear"></app-encabezado>
+
+<ion-content>
+  <ion-text color="primary" class="ion-text-center">
+    <h2>Escanea el código QR para registrar tu asistencia</h2>
+  </ion-text>
+
+  <div class="qr-scanner">
+    <ion-icon name="qr-code-outline" class="qr-icon"></ion-icon>
+    <p>Posiciona el código QR dentro del marco para escanear</p>
+  </div>
+
+  <!-- Botón para abrir la cámara y escanear -->
+  <ion-button expand="block" color="success" class="ion-margin" (click)="scan()">Abrir Cámara</ion-button>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-title class="ion-text-center" size="small">Verificación automática del código QR</ion-title>
+  </ion-toolbar>
+</ion-footer>

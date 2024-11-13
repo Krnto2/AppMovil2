@@ -1,0 +1,17 @@
+ion-segment {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 10px; 
+  }
+  
+  ion-segment-button {
+    flex: 1; 
+    max-width: 50px; 
+    text-align: center;
+  }
+  .content {
+    --padding-top: 10px;
+    --padding-bottom: 10px;
+  }
+    
