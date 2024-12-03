@@ -1,26 +1,28 @@
 <app-encabezado titulo="Asistencia"></app-encabezado>
 
 <ion-content class="ion-padding">
-
   <ion-item>
     <ion-label>Selecciona una clase</ion-label>
-    <ion-select placeholder="Elige clase" [(ngModel)]="selectedClass" (ionChange)="generateRandomStudents()">
-      <ion-select-option value="PGY4121-001">PGY4121-001</ion-select-option>
-      <ion-select-option value="PGY4121-002">PGY4121-002</ion-select-option>
-      <ion-select-option value="PGY4121-003">PGY4121-003</ion-select-option>
-      <ion-select-option value="PGY4121-004">PGY4121-004</ion-select-option>
-      <ion-select-option value="PGY4121-005">PGY4121-005</ion-select-option>
+    <ion-select placeholder="Elige clase" [(ngModel)]="selectedClass" (ionChange)="fetchAttendance()">
+      <ion-select-option *ngFor="let clase of classes" [value]="clase">{{ clase }}</ion-select-option>
     </ion-select>
   </ion-item>
+
+  <div *ngIf="selectedClass && students.length > 0">
+    <h2>Clase: {{ selectedClass }}</h2>
+    <h3>Fecha: {{ currentDate }}</h3>
+    <h3>Alumnos presentes: {{ students.length }}</h3>
+  </div>
 
   <ion-list *ngIf="students.length > 0">
     <ion-item *ngFor="let student of students">
       <ion-label>
         <h2>{{ student.name }}</h2>
-        <p>Asistencia: {{ student.attended }} / {{ student.totalClasses }} clases</p>
-        <p>Porcentaje: {{ student.attendancePercentage }}%</p>
       </ion-label>
     </ion-item>
   </ion-list>
 
+  <div *ngIf="students.length === 0 && selectedClass">
+    <p>No hay registros para la clase seleccionada hoy.</p>
+  </div>
 </ion-content>

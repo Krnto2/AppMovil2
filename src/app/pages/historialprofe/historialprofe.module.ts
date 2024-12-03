@@ -7,7 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { HistorialprofePageRoutingModule } from './historialprofe-routing.module';
 import { ComponentsModule } from "../../components/components.module";
 
-import { HistorialprofePage } from './historialprofe.page';
+import { HistorialProfePage } from './historialprofe.page';
 
 @NgModule({
   imports: [
@@ -17,6 +17,6 @@ import { HistorialprofePage } from './historialprofe.page';
     HistorialprofePageRoutingModule,
     ComponentsModule
   ],
-  declarations: [HistorialprofePage]
+  declarations: [HistorialProfePage]
 })
 export class HistorialprofePageModule {}

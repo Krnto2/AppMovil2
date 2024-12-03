@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar color="secondary">
-    <ion-title class="ion-text-capitalize ion-text-center" color="light" mode="md">Contraseña</ion-title>
+    <ion-title class="ion-text-capitalize ion-text-center" color="light" mode="md">Crear Usuario</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -9,21 +9,40 @@
     <img src="assets/logo.png" style="width: 150px; height: 150px; margin-bottom: 32px;" alt="Logo">
   </div>
 
-  <form (ngSubmit)="resetPassword()">
+  <form (ngSubmit)="createUser()">
     <ion-list lines="full" class="ion-no-margin ion-no-padding">
       <ion-item>
         <ion-label position="floating">Correo Electrónico</ion-label>
-        <ion-input type="email" [(ngModel)]="email" name="email" required autocomplete="email"></ion-input>
+        <ion-input
+          type="email"
+          [(ngModel)]="email"
+          name="email"
+          required
+          autocomplete="email"
+        ></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Contraseña</ion-label>
+        <ion-input
+          type="password"
+          [(ngModel)]="password"
+          name="password"
+          required
+        ></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Confirmar Contraseña</ion-label>
+        <ion-input
+          type="password"
+          [(ngModel)]="confirmPassword"
+          name="confirmPassword"
+          required
+        ></ion-input>
       </ion-item>
     </ion-list>
 
     <ion-button expand="block" type="submit" class="ion-margin-top" color="primary">
-      Restablecer Contraseña
+      Crear Usuario
     </ion-button>
-
-    <ion-button expand="block" color="light" routerLink="/login">
-      Volver al Login
-    </ion-button>
-
   </form>
 </ion-content>

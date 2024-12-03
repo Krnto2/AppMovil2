@@ -8,24 +8,36 @@ import { AlertController } from '@ionic/angular';
   styleUrls: ['./profesor.page.scss'],
 })
 export class ProfesorPage implements OnInit {
+  loggedInUser: any = null; 
 
   constructor(private router: Router, private alertController: AlertController) {}
 
   ngOnInit() {
+    this.loadUser(); 
+  }
+
+  loadUser() {
+    const userData = localStorage.getItem('loggedInUser');
+    if (userData) {
+      this.loggedInUser = JSON.parse(userData);
+    } else {
+      // Si no hay datos del usuario se va pal login
+      this.router.navigate(['/login']);
+    }
   }
 
   goToScan() {
     this.router.navigate(['/generar']);
-
   }
 
   goToHistorial() {
-    this.router.navigate(['/historialprofe'])
+    this.router.navigate(['/historialprofe']);
   }
 
   goToHorario() {
-    this.router.navigate(['/horarioprofe'])
+    this.router.navigate(['/horarioprofe']);
   }
+
   async presentLogoutAlert() {
     const alert = await this.alertController.create({
       header: 'Confirmación',
@@ -35,18 +47,21 @@ export class ProfesorPage implements OnInit {
           text: 'No',
           role: 'cancel',
           cssClass: 'secondary',
-          handler: () => {
-          }
+          handler: () => {},
         },
         {
           text: 'Sí',
-          handler: () => {
-            this.router.navigate(['/login'])
-          }
-        }
-      ]
+          handler: () => {// Llama a la función de cerrar sesión
+          },
+        },
+      ],
     });
 
     await alert.present();
+  }
+
+  logout() {
+    localStorage.removeItem('loggedInUser'); // Limpia los datos del usuario
+    this.router.navigate(['/login']); 
   }
 }

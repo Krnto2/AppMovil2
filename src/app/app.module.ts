@@ -5,7 +5,13 @@ import { RouteReuseStrategy } from '@angular/router';
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
-import { QRCodeModule } from 'angularx-qrcode'; 
+
+import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
+import { provideFirestore, getFirestore } from '@angular/fire/firestore';
+import { provideAuth, getAuth } from '@angular/fire/auth';
+
+import { IonicStorageModule } from '@ionic/storage-angular';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [AppComponent],
@@ -13,9 +19,14 @@ import { QRCodeModule } from 'angularx-qrcode';
     BrowserModule,
     IonicModule.forRoot(),
     AppRoutingModule,
-    QRCodeModule 
+    IonicStorageModule.forRoot(),
   ],
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
+  providers: [
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+    provideFirebaseApp(() => initializeApp(environment.firebase)), 
+    provideFirestore(() => getFirestore()), 
+    provideAuth(() => getAuth()), 
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

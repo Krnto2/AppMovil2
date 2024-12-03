@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { HistorialprofePage } from './historialprofe.page';
+import { HistorialProfePage } from './historialprofe.page';
 
 const routes: Routes = [
   {
     path: '',
-    component: HistorialprofePage
+    component: HistorialProfePage
   }
 ];
 

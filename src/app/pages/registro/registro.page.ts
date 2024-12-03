@@ -7,13 +7,22 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./registro.page.scss'],
 })
 export class RegistroPage implements OnInit {
-  public scannedClass: string = 'Clase desconocida'; 
+  scannedClass: string = ''; 
+  classStartTime: string = ''; 
+  classEndTime: string = ''; 
+
   constructor(private route: ActivatedRoute) {}
 
   ngOnInit() {
-    
+    // get del qr y los parametros de hora 
     this.route.queryParams.subscribe(params => {
-      this.scannedClass = params['scannedText'] || localStorage.getItem('scannedText') || 'Clase desconocida';
+      this.scannedClass = params['className'] || 'Clase desconocida';
+      const scannedTime = new Date(params['scannedTime'] || Date.now()); // Obtener hora del QR o la actual
+
+      // calcula el horario (el suma hora y media desde que se scaneo)
+      this.classStartTime = scannedTime.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+      scannedTime.setMinutes(scannedTime.getMinutes() + 90); 
+      this.classEndTime = scannedTime.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
     });
   }
 }

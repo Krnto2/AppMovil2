@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AlertController } from '@ionic/angular';
 
@@ -7,24 +7,41 @@ import { AlertController } from '@ionic/angular';
   templateUrl: './home.page.html',
   styleUrls: ['./home.page.scss'],
 })
-export class HomePage {
+export class HomePage implements OnInit {
+  currentUser: any = null;
 
   constructor(private router: Router, private alertController: AlertController) {}
 
+  ngOnInit() {
+    this.loadCurrentUser(); 
+  }
+
+  // cargar usuario actual desde el localStorage
+  loadCurrentUser() {
+    const storedUser = localStorage.getItem('loggedInUser'); 
+    if (storedUser) {
+      this.currentUser = JSON.parse(storedUser); 
+      console.log('Usuario actual cargado:', this.currentUser);
+    } else {
+      console.error('No se encontró el usuario actual en el almacenamiento local.');
+      this.router.navigate(['/login']); 
+    }
+  }
+
   goToScan() {
     this.router.navigate(['/scaneo']);
-
   }
 
   goToHistorial() {
-    this.router.navigate(['/historial'])
+    this.router.navigate(['/historial']);
   }
+
 
   goToHorario() {
-    this.router.navigate(['/horario'])
+    this.router.navigate(['/horario']);
   }
 
-  
+  // cerrar sesión
   async presentLogoutAlert() {
     const alert = await this.alertController.create({
       header: 'Confirmación',
@@ -35,21 +52,25 @@ export class HomePage {
           role: 'cancel',
           cssClass: 'secondary',
           handler: () => {
-          }
+            console.log('Cierre de sesión cancelado.');
+          },
         },
         {
           text: 'Sí',
           handler: () => {
-            this.router.navigate(['/login'])
-          }
-        }
-      ]
+            this.logout(); 
+          },
+        },
+      ],
     });
 
     await alert.present();
   }
 
+  // Función para cerrar sesión
+  logout() {
+    localStorage.removeItem('loggedInUser'); 
+    this.router.navigate(['/login']); 
+    console.log('Usuario cerrado sesión y redirigido al login.');
+  }
 }
-
-
-

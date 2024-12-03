@@ -15,4 +15,15 @@
     font-size: 1.2em;
     color: #ffffff;
   }
+  .qr-text {
+    color: black;
+    font-weight: bold; 
+    font-size: 1.2em; 
+    text-shadow: 2px 2px 4px white, -2px -2px 4px white, 2px -2px 4px white, -2px 2px 4px white;
+  }
+  
+  .custom-alert .alert-message {
+    font-size: 16px;
+    line-height: 1.5;
+  }
   
